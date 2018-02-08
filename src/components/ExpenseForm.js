@@ -5,17 +5,24 @@ import 'react-dates/lib/css/_datepicker.css';
 //file below override some style provided by default in react-dates module
 import './../styles/DatePicker_Style.css';
 
+//practicing moment.js
 const now = moment();
-console.log(now.format('MMMM Do YYYY'));
+console.log(moment.unix("1546194600").format("dddd, MMMM Do YYYY, h:mm:ss a"));
 
 export default class ExpenseForm extends React.Component{
-  state = {
-    amount:'',
-    createdAt: now,
-    description: '',
-    note: '',
-    calenderFocused: false
-  };
+  constructor(props){
+    super(props);
+
+    this.state = {
+      amount:props.expense ? (props.expense.amount/100).toString() : '',
+      createdAt: props.expense ? moment(props.expense.createdAt): moment(),
+      description: props.expense ? props.expense.description : '',
+      note: props.expense ? props.expense.note : '',
+      error: '',
+      calenderFocused: false
+    };
+  }
+
 
   onDescriptionChange = (e) => {
     const description = e.target.value;
@@ -42,10 +49,26 @@ export default class ExpenseForm extends React.Component{
     this.setState(() => ({calenderFocused: focused}));
   };
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    if(!this.state.description || !this.state.amount){
+      this.setState(() => ({error: 'Please provide description and amount.'}))
+    }else{
+      this.setState(() => ({error: ''}));
+      this.props.onExpenseSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount),
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note
+      });
+    }
+  };
+
   render() {
     return (
       <div>
-        <form>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
           <input
             type="text"
             placeholder="Description"
