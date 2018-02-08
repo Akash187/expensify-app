@@ -1,0 +1,10 @@
+.DateInput_input{
+    width: 81%;
+    display: flex;
+}
+
+.DateInput_input__focused{
+    border-bottom: 0;
+    background: #4bffd5;
+    margin: auto;
+}
