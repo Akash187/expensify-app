@@ -1,7 +1,6 @@
 //Export a stateless functional component
 //description, amount, createdAt
 import React from 'react';
-import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
 const ExpenseListItem = ({dispatch, id, description, amount, createdAt}) => (
@@ -12,4 +11,4 @@ const ExpenseListItem = ({dispatch, id, description, amount, createdAt}) => (
 );
 
 
-export default connect()(ExpenseListItem);
+export default ExpenseListItem;

@@ -5,6 +5,9 @@ import AppRouter from './routers/AppRouter';
 import {Provider} from 'react-redux';
 import 'normalize.css/normalize.css';
 import './styles/main.scss';
+import 'react-dates/lib/css/_datepicker.css';
+//file below override some style provided by default in react-dates module
+import './../styles/DatePicker_Style.css';
 import configureStore from './store/configureStore';
 import {setEndDate, setStartDate, sortByAmount,
 sortByDate, setTextFilter} from './actions/filters';
