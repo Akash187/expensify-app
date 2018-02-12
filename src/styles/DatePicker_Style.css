@@ -1,9 +1,9 @@
 .DateInput_input{
-    width: 81%;
-    display: flex;
+    box-sizing: border-box;
+    outline: 8px solid white;
+    outline-offset: -8px;
 }
 
 .DateInput_input__focused{
     background: #4bffd5;
-    margin: auto;
 }

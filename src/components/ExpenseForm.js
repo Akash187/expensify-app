@@ -8,6 +8,8 @@ import './../styles/DatePicker_Style.css';
 //practicing moment.js
 const now = moment();
 console.log(moment.unix("1546194600").format("dddd, MMMM Do YYYY, h:mm:ss a"));
+console.log(moment().add(4, 'days').valueOf());
+console.log(moment(1518718705810));
 
 export default class ExpenseForm extends React.Component{
   constructor(props){
