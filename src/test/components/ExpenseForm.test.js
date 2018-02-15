@@ -1,11 +1,8 @@
-//for working of react-dates
-import 'react-dates/initialize';
 import React from 'react';
 import {shallow} from 'enzyme';
 import ExpenseForm from '../../components/ExpenseForm';
 import expenses from '../fixtures/expenses';
 import moment from 'moment';
-import ExpenseListItem from "../../components/ExpenseListItem";
 
 describe("<ExpenseForm /> Component", () => {
   test('should render ExpenseForm correctly', () => {
@@ -79,11 +76,18 @@ describe("<ExpenseForm /> Component", () => {
     });
   });
 
-  test('should set new date on date change', () => {
-    const now = moment();
-    //console.log(now);
-    const wrapper = shallow(<ExpenseForm/>);
-    wrapper.find('SingleDatePicker').prop('onDateChange')(now);
-    expect(wrapper.state('createdAt')).toEqual(now);
-  });
+
+  // test('should set new date on date change', () => {
+  //   const now = moment();
+  //   const wrapper = shallow(<ExpenseForm/>);
+  //   wrapper.find('SingleDatePicker').prop('onDateChange')(now);
+  //   expect(wrapper.state('createdAt')).toEqual(now);
+  // });
+
+  // test('should set calender focus on change', () => {
+  //   const focused = true;
+  //   const wrapper = shallow(<ExpenseForm/>);
+  //   wrapper.find('SingleDatePicker').prop('onFocusChange')({focused});
+  //   expect(wrapper.state('calenderFocused')).toEqual(focused);
+  // });
 });

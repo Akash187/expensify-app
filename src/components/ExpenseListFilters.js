@@ -1,3 +1,4 @@
+import 'react-dates/initialize';
 import React from 'react';
 import {connect} from 'react-redux';
 import {setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate} from "../actions/filters";
