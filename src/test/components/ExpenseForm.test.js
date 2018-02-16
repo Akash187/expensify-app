@@ -77,17 +77,17 @@ describe("<ExpenseForm /> Component", () => {
   });
 
 
-  // test('should set new date on date change', () => {
-  //   const now = moment();
-  //   const wrapper = shallow(<ExpenseForm/>);
-  //   wrapper.find('SingleDatePicker').prop('onDateChange')(now);
-  //   expect(wrapper.state('createdAt')).toEqual(now);
-  // });
+  test('should set new date on date change', () => {
+    const now = moment();
+    const wrapper = shallow(<ExpenseForm/>);
+    wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(now);
+    expect(wrapper.state('createdAt')).toEqual(now);
+  });
 
-  // test('should set calender focus on change', () => {
-  //   const focused = true;
-  //   const wrapper = shallow(<ExpenseForm/>);
-  //   wrapper.find('SingleDatePicker').prop('onFocusChange')({focused});
-  //   expect(wrapper.state('calenderFocused')).toEqual(focused);
-  // });
+  test('should set calender focus on change', () => {
+    const focused = true;
+    const wrapper = shallow(<ExpenseForm/>);
+    wrapper.find('withStyles(SingleDatePicker)').prop('onFocusChange')({focused});
+    expect(wrapper.state('calenderFocused')).toEqual(focused);
+  });
 });
