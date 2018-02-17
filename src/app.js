@@ -9,13 +9,12 @@ import 'react-dates/lib/css/_datepicker.css';
 //file below override some style provided by default in react-dates module
 import './styles/DatePicker_Style.css';
 import configureStore from './store/configureStore';
-import {setEndDate, setStartDate, sortByAmount,
-sortByDate, setTextFilter} from './actions/filters';
-import {addExpenses, deleteExpenses, editExpense} from './actions/expenses';
+import {addExpenses} from './actions/expenses';
 
 import getVisibleExpenses from './selectors/expenses';
 
 const store = configureStore();
+console.log('Test');
 
 store.subscribe(() => {
   const state = store.getState();
