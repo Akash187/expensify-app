@@ -16,6 +16,6 @@ export default [{
   id: '3',
   description: 'Gas bill',
   note: 'This was the final payment for that address',
-  amount: 4500,
+  amount: 10500,
   createdAt: moment(0).add(4, 'days').valueOf()
 }];

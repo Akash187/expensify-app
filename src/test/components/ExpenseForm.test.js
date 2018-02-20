@@ -71,7 +71,7 @@ describe("<ExpenseForm /> Component", () => {
     expect(onSubmitSpy).toHaveBeenLastCalledWith({
       description: "January Rent",
       note: expenses[0].note,
-      amount: expenses[0].amount/100,
+      amount: expenses[0].amount,
       createdAt: expenses[0].createdAt
     });
   });
