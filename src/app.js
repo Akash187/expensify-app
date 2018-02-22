@@ -10,6 +10,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import './styles/DatePicker_Style.css';
 import configureStore from './store/configureStore';
 import {addExpenses} from './actions/expenses';
+import './firebase/firebase';
 
 import getVisibleExpenses from './selectors/expenses';
 
