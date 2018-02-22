@@ -16,6 +16,7 @@ const database = firebase.database();
 database.ref().set({
   name: 'Akash Kumar',
   age: 20,
+  job: "Software Developer",
   isSingle: true,
   location: {
     city: "Lucknow",
@@ -27,11 +28,16 @@ database.ref().set({
   console.log('This failed - ', e);
 });
 
-database.ref('isSingle').remove()
-  .then(function () {
-    console.log("Remove succeeded.")
-  })
-  .catch(function (error) {
-    console.log("Remove failed: " + error.message)
-  });
+database.ref().update({
+  job: "Manager",
+  'location/city': "Hyderabad"
+}).then();
+
+// database.ref('isSingle').remove()
+//   .then(function () {
+//     console.log("Remove succeeded.")
+//   })
+//   .catch(function (error) {
+//     console.log("Remove failed: " + error.message)
+//   });
 
