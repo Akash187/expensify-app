@@ -21,13 +21,17 @@ database.ref().set({
     city: "Lucknow",
     country: "India"
   }
+}).then(() => {
+  console.log('Data is saved.')
+}).catch((e) => {
+  console.log('This failed - ', e);
 });
 
-database.ref('age').set(27);
-database.ref('location/city').set('Delhi');
-
-database.ref('attributes').set({
-  height: 168,
-  weight: 65
-});
+database.ref('isSingle').remove()
+  .then(function () {
+    console.log("Remove succeeded.")
+  })
+  .catch(function (error) {
+    console.log("Remove failed: " + error.message)
+  });
 
