@@ -1,5 +1,6 @@
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
+    resolve('Something like this');
     reject('something get wrong!.');
   }, 5500);
 });
